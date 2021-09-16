@@ -4,11 +4,11 @@
     "slug": "SpaceLaunchApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./app/assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./app/assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#18242F"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -17,16 +17,19 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "buildNumber": 1
     },
     "android": {
+      "package": "de.tim0_12432.spacelaunchapp",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./app/assets/adaptive-icon.png",
+        "backgroundColor": "#18242F"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./app/assets/favicon.png"
     }
   }
 }

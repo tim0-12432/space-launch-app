@@ -4,15 +4,22 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
+    "link": "npx react-native run-android",
+    "build:android:apk": "expo build:android -t apk --no-publish --no-wait --generate-keystore",
+    "build:android:bundle": "expo build:android -t app-bundle --no-publish --no-wait --generate-keystore",
+    "build:ios:arch": "expo build:ios -t archive --no-publish --no-wait --generate-keystore"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.8",
+    "axios": "^0.21.4",
     "expo": "~42.0.1",
+    "expo-localization": "^10.2.0",
     "expo-status-bar": "~1.0.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-animatable": "^1.3.3",
+    "react-native-vector-icons": "^8.1.0",
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {
