@@ -2,7 +2,7 @@
   "expo": {
     "name": "SpaceLaunchApp",
     "slug": "SpaceLaunchApp",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
     "splash": {
@@ -18,11 +18,11 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.1.0"
     },
     "android": {
       "package": "de.tim0_12432.spacelaunchapp",
-      "versionCode": 1,
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/adaptive-icon.png",
         "backgroundColor": "#18242F"
