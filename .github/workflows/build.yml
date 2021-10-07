@@ -17,16 +17,20 @@ jobs:
         with:
           node-version: 14.x
 
-      - name: install java 8
-        uses: actions/setup-java@v2
-        with:
-          distribution: "adopt-hotspot"
-          java-version: "8"
-
       - name: install dependencies
         run: |
           npm install
-          npm install -g turtle-cli
+          npm install -g license-report
 
-      - name: build
-        run: turtle build:android
+      - name: linting
+        run: npm run lint
+
+      - name: licenses
+        run: npm run licenses
+
+      - name: upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts
+          path: licenses.csv
+          if-no-files-found: error

@@ -2,12 +2,15 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
+    "lint": "eslint .",
+    "licenses": "license-report --config license-report.config.json > licenses.csv",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "link": "npx react-native run-android",
-    "build:android:apk": "expo build:android -t apk --no-publish --no-wait --generate-keystore",
-    "build:android:bundle": "expo build:android -t app-bundle --no-publish --no-wait --generate-keystore",
-    "build:ios:arch": "expo build:ios -t archive --no-publish --no-wait --generate-keystore"
+    "publish": "expo publish",
+    "build:android:apk": "expo build:android -t apk --no-publish --no-wait",
+    "build:android:bundle": "expo build:android -t app-bundle --no-publish --no-wait",
+    "build:ios:arch": "expo build:ios -t archive --no-publish --no-wait"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.8",
@@ -19,6 +22,7 @@
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
     "react-native-animatable": "^1.3.3",
+    "react-native-countdown-component": "^2.7.1",
     "react-native-vector-icons": "^8.1.0",
     "react-native-web": "~0.13.12"
   },
@@ -26,6 +30,11 @@
     "@babel/core": "^7.9.0",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
+    "@types/react-native-countdown-component": "^2.7.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.26.1",
     "typescript": "~4.0.0"
   },
   "private": true

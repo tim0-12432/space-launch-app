@@ -18,7 +18,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "buildNumber": 1
+      "buildNumber": "1.0.0"
     },
     "android": {
       "package": "de.tim0_12432.spacelaunchapp",
