@@ -1,6 +1,7 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, Share, View } from "react-native";
 import * as Localization from "expo-localization";
+import Icon from "react-native-vector-icons/Ionicons";
 import theme from "../properties/colors";
 import Card from "./Card";
 
@@ -26,9 +27,18 @@ export default function Launch(props: Props) {
 		})}`;
 	return (
 		<Card>
-			<Text style={styles.mission}>
-				{ props.mission }
-			</Text>
+			<View style={styles.header}>
+				<Text style={styles.mission}>
+					{ props.mission }
+				</Text>
+				<Icon.Button
+					onPress={() => shareLaunch(props)}
+					backgroundColor={theme.background.light}
+					color={theme.font.darker}
+					borderRadius={10}
+					name="share-social"
+				/>
+			</View>
 			<Text style={styles.status}>
                 Status: { props.status }
 			</Text>
@@ -54,7 +64,29 @@ export default function Launch(props: Props) {
 	);
 }
 
+async function shareLaunch(props: Props) {
+	const content = {
+		message: `${props.provider} will launch a "${props.rocket}" for mission "${props.mission}". The launch window starts at ${new Date(props.windowStart).toLocaleString("de-DE")}. Stay tuned!`
+	};
+
+	const options = {
+		tintColor: theme.background.dark,
+		dialogTitle: "Upcoming rocket launch!"
+	};
+
+	try {
+		await Share.share(content, options);
+	} catch (error: any) {
+		console.error(error?.message);
+	}
+}
+
 const styles = StyleSheet.create({
+	header: {
+		width: "100%",
+		flexDirection: "row",
+		justifyContent: "space-between"
+	},
 	mission: {
 		color: theme.font.light,
 		fontSize: 28
@@ -80,5 +112,5 @@ const styles = StyleSheet.create({
 	},
 	location: {
 		color: theme.font.dark
-	},
+	}
 });

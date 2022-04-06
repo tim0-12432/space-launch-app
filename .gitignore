@@ -8,6 +8,7 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 *.csv
+.dccache
 web-build/
 
 # macOS
